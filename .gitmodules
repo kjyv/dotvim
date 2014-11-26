@@ -4,6 +4,9 @@
 [submodule "vendor/vim-pathogen"]
 	path = vendor/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+[submodule "vendor/vim-airline"]
+	path = vendor/vim-airline
+	url = https://github.com/bling/vim-airline.git
 [submodule "vendor/ack"]
 	path = vendor/ack
 	url = git://github.com/mileszs/ack.vim.git
@@ -31,9 +34,3 @@
 [submodule "vendor/vim-handlebars"]
 	path = vendor/vim-handlebars
 	url = git://github.com/nono/vim-handlebars.git
-[submodule "vendor/golden-ratio"]
-	path = vendor/golden-ratio
-	url = git://github.com/roman/golden-ratio.git
-[submodule "vendor/vim-airline"]
-	path = vendor/vim-airline
-	url = https://github.com/bling/vim-airline.git
