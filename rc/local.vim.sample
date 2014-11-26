@@ -1,29 +1,148 @@
+" fonts and symbols
 
-colorscheme slate
-set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 9 
+set encoding=utf-8
+set guifont=Monaco\ for\ Powerline:h12
+let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
+
+"" basic things
+
+set tabstop=4
+set smarttab
+set shiftwidth=4
+set autoindent
+set expandtab
+set ignorecase
+set tw=100  "line break width, use gqgq to break lines automatically
+
+set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.swp,*.map
+set undodir=/tmp
+set undofile
+
+""CtrlP
+
+" make ctrl-p always open new tabs
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
+"ctrlp gui settings have to be in ~/.gvimrc
+"macm File.New\ Tab key=<nop>
+"nmap <D-t> :CtrlP<CR>
+let g:ctrlp_map = '<D-t>'
+let g:ctrlp_working_path_mode = 'ra'
 
 
-set expandtab           " tabs --> blanks
-let perl_fold=1
-let g:xml_syntax_folding = 1
+"" tabs
 
-" jslint
-" Run JSLint on the current file in simple mode when <F4> is pressed.
-map <F4> :JSLintLight<CR>
+noremap <c-tab> :tabnext<cr>
+noremap <c-s-tab> :tabprev<cr>
+map <SwipeLeft> :tabprev<cr>
+map <SwipeRight> :tabnext<cr>
 
-" Run JSLint on the current file with quickfix when <F5> is pressed.
-map <F5> :JSLint<CR>
-let g:rsenseHome = "/home/niklas/src/rsense"
+"" tex-suite
 
-set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
+" compile to pdf
+let g:Tex_DefaultTargetFormat = 'pdf'
 
-" disable ruby debugger
+" pdf compile and view settings
+let g:Tex_ViewRule_pdf = 'Skim'
+let g:Tex_CompileRule_pdf = 'latexmk -pdf -latexoption="-synctex=1"'
+let g:Imap_UsePlaceHolders = 0
+
+let Tex_FoldedSections=""
+let Tex_FoldedEnvironments=""
+let Tex_FoldedMisc=""
+
+" Command-R will write, compile, and forward search--thanks to
+" http://reference-man.blogspot.com/2011/09/fully-integrated-latex-in-macvim.html
+" preview, switch back to main window
+map <D-r> :w<cr><leader>ll<leader>ls
+imap <D-r> <ESC><D-r>
+
+let g:Tex_IgnoredWarnings ='
+          \"Underfull\n".
+          \"Overfull\n".
+          \"specifier changed to\n".
+          \"You have requested\n".
+          \"Missing number, treated as zero.\n".
+          \"There were undefined references\n".
+          \"Citation %.%# undefined\n".
+          \"Marginpar on page %.%# moved\n".
+          \"\oval, \circle, or \line size unavailable\n"' 
+
+" ignore all warnings below level 4
+let g:TCLevel = 4
+
+" one last thing for latex
+let g:tex_flavor = 'latex'
+let g:Tex_GotoError=0
+
+"" others
+
+" _disable_ ruby debugger
 let g:ruby_debugger_loaded = 1
-set wildmenu
+let g:ackprg="ack -H --nocolor --nogroup --column"
 
-autocmd User Rails Rnavcommand cell app/cells -glob=**/* -suffix=_cell.rb
-autocmd User Rails Rnavcommand cell app/widgets -glob=**/* -suffix=_widget.rb
+"" coffee-script
 
-" :help W11 reading in files automatically if only changed on disk
-set autoread
+"au BufWritePost *.coffee silent make! | cwindow | redraw!
+autocmd QuickFixCmdPost * nested cwindow | redraw!
+au BufWritePost *.coffee silent make!
+let g:coffee_make_options = '-m'    " -b
+
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
+"" javascript
+
+let $JS_CMD='node'
+let g:JSLintHighlightErrorLine = 0
+let b:jslint_disabled = 1
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
+
+"" syntastic
+
+let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_javac_config_file_enabled=1
+let g:syntastic_tex_checkers = ['chktex'] "['lacheck']
+
+"better omnicompletion
+
+"function! CleverTab()
+"  if pumvisible()
+"    return "\<C-N>"
+"  endif
+"  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+"    return "\<Tab>"
+"  elseif exists('&omnifunc') && &omnifunc != ''
+"    return "\<C-X>\<C-O>"
+"  else
+"    return "\<C-N>"
+"  endif
+"endfunction
+
+"inoremap <Tab> <C-R>=CleverTab()<CR>
+
+"set completeopt=longest,menuone
+
+"paste without replacing buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+
+function! s:Repl()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+
+" NB: this supports "rp that replaces the selection by the contents of @r
+vnoremap <silent> <expr> p <sid>Repl()
+
+" replace inner word shortcut
+map r viwp
+
+
 
