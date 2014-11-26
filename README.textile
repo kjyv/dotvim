@@ -1,5 +1,13 @@
 h2. Collection of Vim Plugins
 
+This is a customized vim configuration set with a few plugin that I use.
+It is pretty generic but has some ties to using MacVim, edit Coffee Script
+and compile some LaTex.
+
+The following is the original Readme
+
+----
+
 I primary use Vim for web development with ruby and rails. So the following
 plugins are included:
 
