@@ -1,54 +1,15 @@
-[submodule "vendor/vim-haml"]
-	path = vendor/vim-haml
-	url = git://github.com/tpope/vim-haml.git
 [submodule "vendor/vim-fugitive"]
 	path = vendor/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vendor/vim-cucumber"]
-	path = vendor/vim-cucumber
-	url = git://github.com/tpope/vim-cucumber.git
-[submodule "vendor/vim-git"]
-	path = vendor/vim-git
-	url = git://github.com/tpope/vim-git.git
-[submodule "extras/gist-287147"]
-	path = extras/gist-287147
-	url = git://gist.github.com/287147.git
-[submodule "vendor/vim-rails"]
-	path = vendor/vim-rails
-	url = git://github.com/tpope/vim-rails.git
-[submodule "vendor/vim-ragtag"]
-	path = vendor/vim-ragtag
-	url = git://github.com/tpope/vim-ragtag.git
-[submodule "vendor/vim-liquid"]
-	path = vendor/vim-liquid
-	url = git://github.com/tpope/vim-liquid.git
 [submodule "vendor/vim-pathogen"]
 	path = vendor/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
-[submodule "vendor/vim-endwise"]
-	path = vendor/vim-endwise
-	url = git://github.com/tpope/vim-endwise.git
-[submodule "vendor/vim-repeat"]
-	path = vendor/vim-repeat
-	url = git://github.com/tpope/vim-repeat.git
 [submodule "vendor/ack"]
 	path = vendor/ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "vendor/vim-ruby"]
-	path = vendor/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
 [submodule "vendor/latex-suite"]
 	path = vendor/latex-suite
 	url = git://github.com/mineiro/vim-latex.git
-[submodule "vendor/vim-sshauthkeys"]
-	path = vendor/vim-sshauthkeys
-	url = git://github.com/xevz/vim-sshauthkeys.git
-[submodule "vendor/vim-scratch"]
-	path = vendor/vim-scratch
-	url = git://github.com/duff/vim-scratch.git
-[submodule "vendor/vim-bufonly"]
-	path = vendor/vim-bufonly
-	url = git://github.com/duff/vim-bufonly.git
 [submodule "vendor/Tabular"]
 	path = vendor/Tabular
 	url = git://github.com/godlygeek/tabular.git
@@ -61,54 +22,18 @@
 [submodule "vendor/gundo"]
 	path = vendor/gundo
 	url = git://github.com/sjl/gundo.vim.git
-[submodule "vendor/treetop"]
-	path = vendor/treetop
-	url = git://github.com/nanki/treetop.vim.git
-[submodule "vendor/vim-powerline"]
-	path = vendor/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "vendor/vim-easymotion"]
-	path = vendor/vim-easymotion
-	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule "vendor/controlp"]
 	path = vendor/controlp
 	url = git://github.com/kien/ctrlp.vim.git
 [submodule "vendor/vim-commentary"]
 	path = vendor/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
-[submodule "vendor/scss-syntax"]
-	path = vendor/scss-syntax
-	url = git://github.com/cakebaker/scss-syntax.vim.git
-[submodule "vendor/vim-textobj-rubyblock"]
-	path = vendor/vim-textobj-rubyblock
-	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
-[submodule "vendor/vim-textobj-user"]
-	path = vendor/vim-textobj-user
-	url = git://github.com/kana/vim-textobj-user.git
-[submodule "vendor/vim-abolish"]
-	path = vendor/vim-abolish
-	url = git://github.com/tpope/vim-abolish.git
-[submodule "tpope/vim-bundler"]
-	path = tpope/vim-bundler
-	url = git://github.com/tpope/vim-bundler.git
-[submodule "tpope/vim-rvm"]
-	path = tpope/vim-rvm
-	url = git://github.com/tpope/vim-rvm.git
 [submodule "vendor/vim-handlebars"]
 	path = vendor/vim-handlebars
 	url = git://github.com/nono/vim-handlebars.git
 [submodule "vendor/golden-ratio"]
 	path = vendor/golden-ratio
 	url = git://github.com/roman/golden-ratio.git
-[submodule "vendor/nerdtree"]
-	path = vendor/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vendor/VimOrganizer"]
-	path = vendor/VimOrganizer
-	url = git://github.com/hsitz/VimOrganizer.git
-[submodule "vendor/nginx"]
-	path = vendor/nginx
-	url = git://github.com/vim-scripts/nginx.vim.git
-[submodule "vendor/boxdraw"]
-	path = vendor/boxdraw
-	url = git://github.com/vim-scripts/boxdraw.git
+[submodule "vendor/vim-airline"]
+	path = vendor/vim-airline
+	url = https://github.com/bling/vim-airline.git

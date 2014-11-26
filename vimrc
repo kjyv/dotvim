@@ -3,8 +3,7 @@
 " this may be slowing down startup, 
 " but this way we can add vim plugins as submodules
 source $HOME/.vim/vendor/vim-pathogen/autoload/pathogen.vim
-call pathogen#runtime_append_all_bundles('vendor')
-call pathogen#helptags()
+call pathogen#infect('vendor/{}')
 
 " source $HOME/.vim/rc/*.vim
 " must source manually, because these are lots of files
