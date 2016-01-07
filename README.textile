@@ -5,6 +5,7 @@ It is pretty generic but has some ties to using MacVim with a sidebar and tabs, 
 
 
 The following is the original Readme.
+
 ----
 
 I primary use Vim for web development with ruby and rails. So the following
